@@ -1,6 +1,6 @@
 <?php
 
-namespace julio101290\boilerplate\Commands;
+namespace julio101290\boilerplatesettings\Commands;
 
 use CodeIgniter\CLI\BaseCommand;
 use CodeIgniter\CLI\CLI;
@@ -9,7 +9,7 @@ use Config\Autoload;
 /**
  * Class PublishCommand.
  */
-class PublishCommand extends BaseCommand
+class PublishCommandSettings extends BaseCommand
 {
     /**
      * The group the command is lumped under
@@ -17,14 +17,14 @@ class PublishCommand extends BaseCommand
      *
      * @var string
      */
-    protected $group = 'boilerplate';
+    protected $group = 'boilerplatesettings';
 
     /**
      * The command's name.
      *
      * @var string
      */
-    protected $name = 'boilerplate:publish';
+    protected $name = 'boilerplatesettings:publish';
 
     /**
      * The command's short description.
@@ -80,9 +80,9 @@ class PublishCommand extends BaseCommand
         $path = "{$this->sourcePath}/Config/Boilerplate.php";
 
         $content = file_get_contents($path);
-        $content = str_replace('namespace julio101290\boilerplate\Config', 'namespace Config', $content);
+        $content = str_replace('namespace julio101290\boilerplatesettings\Config', 'namespace Config', $content);
 
-        $this->writeFile('Config/Boilerplate.php', $content);
+        $this->writeFile('Config/BoilerplateSettings.php', $content);
     }
 
     protected function publishMigration()
@@ -91,7 +91,7 @@ class PublishCommand extends BaseCommand
 
         foreach ($map as $file) {
             $content = file_get_contents("{$this->sourcePath}/Database/Migrations/{$file}");
-            $content = str_replace('namespace julio101290\boilerplate\Database\Migrations', 'namespace '.APP_NAMESPACE.'\Database\Migrations', $content);
+            $content = str_replace('namespace julio101290\boilerplatesettings\Database\Migrations', 'namespace '.APP_NAMESPACE.'\Database\Migrations', $content);
 
             $this->writeFile("Database/Migrations/{$file}", $content);
         }
