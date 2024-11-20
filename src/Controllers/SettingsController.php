@@ -22,7 +22,7 @@ class SettingsController extends BaseController {
 
     public function __construct() {
         $this->group = new GroupModel();
-        $this->settings = new \App\Models\SettingsModel();
+        $this->settings = new SettingsModel();
         $autorize = $this->authorize = Services::authorization();
         helper('menu');
     }
@@ -38,7 +38,9 @@ class SettingsController extends BaseController {
         $data["subtitle"] = lang('settings.settings.title');
         $data["data"] = $datos;
 
-        return view('settings', $data);
+        return view('julio101290\boilerplatesettings\Views\settings', $data);
+        
+
     }
 
     public function save() {

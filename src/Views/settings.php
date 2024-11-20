@@ -15,9 +15,6 @@
                     <div class="card-header">
                         <h3 class="card-title"><?= lang('settings.settings.title') ?></h3>
                     </div>
-
-
-
                     <form action="<?= base_url('admin/settings') ?>/save" method="post">
                         <?= csrf_field() ?>
 
@@ -26,28 +23,29 @@
 
                             <div class="form-group">
                                 <label for="nombreEmpresa"><?= lang('settings.settings.nameCorporation') ?></label>
-                                <input type="text" class="form-control" id="nombreHospital" value="<?= $data["nombreHospital"] ?>"  name="nombreHospital" placeholder="<?= lang('settings.nameCompanie') ?>">
+                                <input type="text" class="form-control" id="nameCompanie" value="<?= $data["nameCompanie"] ?>"  name="nameCompanie" placeholder="<?= lang('settings.nameCompanie') ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="correoElectronico"><?= lang('settings.settings.email') ?></label>
-                                <input type="email" class="form-control" value="<?= $data["correoElectronico"] ?>" id="correoElectronico" name="correoElectronico" placeholder="<?= lang('settings.email') ?>">
+                                <input type="email" class="form-control" value="<?= $data["email"] ?>" id="email" name="email" placeholder="<?= lang('settings.email') ?>">
                             </div>
 
                             <div class="form-group">
                                 <label for="RFC"><?= lang('settings.settings.ID') ?></label>
-                                <input type="text" class="form-control" value="<?= $data["RFC"] ?>" id="RFC" name="RFC" placeholder="<?= lang('settings.idTaxPlaceholder') ?>">
+                                <input type="text" class="form-control" value="<?= $data["idTax"] ?>" id="idTax" name="idTax" placeholder="<?= lang('settings.idTaxPlaceholder') ?>">
                             </div>
 
 
                             <div class="form-group">
                                 <label for="telefono"><?= lang('settings.settings.phone') ?></label>
-                                <input type="text" class="form-control" value="<?= $data["telefono"] ?>" id="Telefono" name="telefono" placeholder="<?= lang('settings.phoneNumberPlaceholder') ?>">
+                                <input type="text" class="form-control" value="<?= $data["phoneNumber"] ?>" id="phoneNumber" name="phoneNumber" placeholder="<?= lang('settings.phoneNumberPlaceholder') ?>">
                             </div>
 
                             <div class="form-group">
-                                <label for="telefono"><?= lang('settings.settings.languaje') ?></label>
-                                <select type="select2" class="form-control"  id="languaje" name="languaje" placeholder="Inserte telefono de la empresa">
+                                <label for="languaje"><?= lang('settings.settings.languaje') ?></label>
+                               
+                                <select type="select2" class="form-control"  id="languaje" name="languaje" >
 
                                     <option value="en"><?= lang('settings.settings.languajeOptionEN') ?></option>
                                     <option value="es"><?= lang('settings.settings.languajeOptionES') ?></option>
